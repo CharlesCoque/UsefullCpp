@@ -1,0 +1,14 @@
+#include <iostream>
+
+//In case it is usefull sometimes
+
+void foo(double d, int i)
+{
+    std::cout << "d = " << d << " i = " << i << "\n";
+}
+
+int main()
+{
+	void foo(double d = 4.2, int i = 3);
+	foo(); // print d = 4.2 i = 3
+}
