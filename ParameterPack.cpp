@@ -26,6 +26,7 @@ using type = typename decltype (
     )::type;
 
 
+//The compiler will fail and it will tell us wich type Check was used with
 template<typename T>
 struct Check;
 
