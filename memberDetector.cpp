@@ -1,11 +1,13 @@
-//Simple trick to know at compile time if a class has a certain member or not
-
 #include <iostream>
 
-class Test
+class IHaveAField
 {
 public:
     int field;  
+};
+
+class IDont
+{
 };
 
 template<typename T, typename = int>
@@ -21,5 +23,6 @@ struct hasIt<T, decltype(T::field)> : std::true_type
 
 int main()
 {
-    std::cout << std::boolalpha << hasIt<Test>::value;
+    std::cout << std::boolalpha << hasIt<IHaveAField>::value << "\n";
+    std::cout << std::boolalpha << hasIt<IDont>::value << "\n";
 }
