@@ -1,4 +1,5 @@
 #include <iostream>
+#include <type_traits>
 
 class IHaveAField
 {
@@ -16,7 +17,7 @@ struct hasIt : std::false_type
 };
 
 template<typename T>
-struct hasIt<T, decltype(T::field)> : std::true_type
+struct hasIt<T, std::void_t<decltype(T::field)> > : std::true_type
 {
 };
 
