@@ -11,7 +11,7 @@ class IDont
 {
 };
 
-template<typename T, typename = int>
+template<typename T, typename = void>
 struct hasIt : std::false_type
 {
 };
